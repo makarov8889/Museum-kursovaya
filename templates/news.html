@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock%}
+
+{% block body %}
+<header id="masthead" class="site-header container" role="banner">
+		<div class="site-branding">
+			<h1 class="site-title text-center"><a>Новости музея</a></h1>
+        </div>
+</header>
+<body>
+<div class="d-flex flex-column align-items-center">
+{% for el in data %}
+<div class="col-md-6" bis_skin_checked="1">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" bis_skin_checked="1">
+        <div class="col p-4 d-flex flex-column position-static" bis_skin_checked="1">
+          <h3 class="mb-0">{{el.title}}</h3>
+          <div class="mb-1 text-muted" bis_skin_checked="1">{{el.date}}</div>
+          <p class="card-text mb-auto">{{el.text}}</p>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+</div>
+</body>
+{% endblock%}

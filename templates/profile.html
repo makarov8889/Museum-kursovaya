@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+Страница администратора
+{% endblock%}
+{% block body %}
+{{ super() }}
+<header id="masthead" class="site-header container" role="banner">
+		<div class="site-branding">
+			<h1 class="site-title text-center"><a>Добро пожаловать, admin</a></h1>
+        </div>
+</header>
+<body>
+<form action="{{url_for('profile')}}" method="post" class="form-contact">
+  <input type="submit" name="submit_button" value="Добавить статью">
+  <input type="submit" name="submit_button" value="Выйти">
+  </form>
+</body>
+{% endblock%}
